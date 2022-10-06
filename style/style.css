@@ -1,0 +1,593 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #efefef;
+    margin: 0;
+}
+
+h1{
+    font-size: 34px;
+}
+
+/*--------------------EMPIEZA EL HEADER--------------------*/
+
+header {
+    background-color: white;
+    margin: 0;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+
+
+.nav__inicio {
+    font-size: 30px;
+    text-transform: uppercase;
+    font-style: italic;
+    transition: 0.3s ease;
+}
+.nav__inicio:hover{
+    color: rgba(0, 0, 0, .666);
+    transform: scale(1.05, 1.05);
+}
+
+.nav__lista {
+    list-style-type: none;
+    /* <-- Saca el punto de la lista */
+    display: inline-flex;
+    /* <-- Pone lista horizontal */
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.nav__lista a {
+    margin: 15px;
+    padding: 7px;
+    transition: .3s ease;
+}
+
+.nav__lista a:hover{
+    background-color: #efefef;
+    border-radius: 10px;
+}
+
+.marcador{
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.152);
+}
+
+@media (max-width: 1150px){
+    .nav{
+        display: block;
+        text-align: center;
+    }
+}
+/*---------- TERMINA EL HEADER ----------*/
+
+
+.texto__link a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+.flex{
+    display: flex;
+}
+
+/*----------EMPIEZA EL FOOTER----------*/
+
+footer {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    align-items: center;
+    
+}
+
+.footer__fijo{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer P {
+    font-size: 15px;
+    color: rgb(31, 31, 31, .8);
+    padding-left: 20px;
+}
+
+.footer__boton {
+    text-decoration: none;
+    color: black;
+    padding: 7px;
+    transition: 0.3s ease;
+    margin-right: 20px;
+}
+
+.footer__boton:hover {
+    background-color: #efefef;
+    border-radius: 10px;
+}
+
+@media (max-width: 1000px){
+    footer{
+        flex-direction:column-reverse;
+    }
+    footer p{
+        padding: 0%;
+    }
+}
+
+/*----------TERMINA EL FOOTER----------*/
+
+
+/*----------IMAGEN DEL FONDO EMPIEZA----------*/
+
+.imagen__inicio {
+    width: 100%;
+    /* <-- Corta imagen lateral al tamaño de la pantalla */
+    background-size: cover;
+    object-fit: cover;
+    height: 94vh;
+    /* <-- Corta imagen vertical al tamaño de la pantalla */
+    object-position: right;
+}
+
+.imagen__fondo{
+    width: 100%;
+    height: 94vh;
+    object-position: left bottom;
+    object-fit: cover;
+}
+
+/*----------IMAGEN DEL FONDO TERMINA----------*/
+
+/*----------EMPIEZA EQUIPOS----------*/
+.equipos {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    /* <-- Pone los elementos en linea horizontal. no manda a ninguno abajo */
+    margin-bottom: 50px;
+    gap: 16px;
+}
+
+.equiposEspacio {
+    display: flex;
+    gap: 10px;
+    /* <-- Pone espacios entre los elementos */
+}
+
+.title {
+    display: flex;
+    font-size: 34px;
+    text-transform: uppercase;
+    font-style: oblique;
+    margin: 30px;
+}
+
+.title a{
+    transition: color 0.3s ease;
+}
+
+.title a:hover{
+    color: rgba(0, 0, 0, .666);
+}
+
+.equipos img {
+    display: flex;
+    width: 366px;
+    height: 550px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.equipos__grupo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: .3s ease;
+    transition: transform .5s;
+}
+ 
+.equipos__grupo:hover{
+    cursor: pointer;
+    
+}
+
+.equipos__grupo:hover{
+    transform: scale(1.03);
+}
+
+.equipos__grupo p {
+    display: flex;
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, .3);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+@media (max-width:1500px){
+    .equipos img{
+        width: 244px;
+        height:366px;
+    }
+}
+@media (max-width: 1000px){
+    .equipos{
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+    }
+}
+/* TODO: Arreglar las imagenes para que se ponga una abajo de la otra */
+
+/*----------TERMINA EQUIPOS----------*/
+
+/*----------PRODUCTOS----------*/
+.main__productos{
+    padding-bottom: 50px;
+}
+.nav__productos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 600;
+}
+.nav__productos li{
+    margin: 30px 0px;
+    border-radius: 10px;
+    background-color:#efefef;
+    border: 1px solid rgba(0, 0, 0, 0.152);
+    transition: .3s ease;
+}
+.nav__productos li:hover{
+    transform: scale(1.04, 1.04);
+    box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 60%);
+    background-color: #ffffff;
+}
+.nav__productos a{
+    text-decoration: none;
+    color: black;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+    padding: 4px;
+}
+
+.title__1 {
+    display: flex;
+    font-size: 38px;
+    text-transform: uppercase;
+    font-style: oblique;
+    margin: 30px;
+    justify-content: center;
+}
+
+.box{
+    margin-top: 150px;
+}
+
+.box__card{
+    justify-content: space-evenly;
+}
+
+.box__imagen{
+    width: 300px;
+    border-radius: 10px 10px 0px 0px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.152) ;
+    justify-content: space-between;
+    transition: .3s ease;
+}
+
+.card:hover{
+    transform: scale(1.03, 1.03);
+    box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 60%);
+}
+
+.card__body{
+    justify-content: space-evenly;
+    margin: 10px;  
+}
+
+.card__title{
+    margin-top: 10px;
+    font-size: 17px;
+}
+
+.productos__view{
+    height: 80vh;
+    margin-top: 60px;
+}
+
+.buy{
+    display: flex;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    background-color: #08f;
+    padding: 10px;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+.buy:hover{
+    background-color:rgb(0, 105, 197);
+}
+
+.precio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/*----------PRODUCTOS----------*/
+
+/*----------LOCALES----------*/
+
+.body__locales{
+    background-image: url(./../imagenes/fondo-locales.jpg);
+    background-position: left bottom;
+    background-size: cover;
+}
+
+.locales__frase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto__dividido{
+    color: #ffffff;
+    font-size: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.texto__dividido p{
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.mapa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*----------LOCALES----------*/
+/* grid */
+.grid{
+    display: grid;
+    grid-template-areas:
+    "header header"
+    "aside main"
+    "footer footer";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 63px auto 58px;
+    height: 100vh;
+}
+header{
+    grid-area:header;
+}
+footer{
+    grid-area:footer;
+}
+main{
+    grid-area:main;
+}
+aside{
+    grid-area:aside;
+}
+
+@media (max-width: 1150px){
+    .grid{
+    grid-template-rows: 100px auto 58px;
+    }
+}
+/* grid */
+/*----------CONTACTO----------*/
+
+.body__contacto{
+    background-image: url(../imagenes/fondo-contacto.jpg);
+    background-position: left bottom;
+    background-size: cover;
+}
+.fondo-rgba1{
+    position: relative;
+}
+
+.fondo-rgba1 .fondo-rgba2{
+    background-color: rgba(0, 0, 0, .3);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.contacto__form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacto__frase{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto__form__2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    border-radius: 30px;
+    background-color: #ffffff;
+    max-width: 300px;
+    width: 70%;
+    box-shadow: 0 5px 10px -5px rgb(0 0 0 / 60%);  /* Sombra */
+}
+
+.contacto__form__2 h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    padding-bottom:30px;
+    display: flex;
+    justify-content: center;
+    font-style: oblique;
+}
+
+.contacto__container__grupo{
+    display: flex;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.contacto__container__grupo label{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.contacto__container__grupo label:hover{
+    cursor: pointer;
+}
+
+.contacto__input{
+    background: none;
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-bottom: 1px solid #0000003a;
+    resize: none;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.contacto__input:focus{
+    width: 100%;
+    border:none;
+    outline: 1px solid rgba(0, 0, 0, 0.152) ;
+    border-radius: 5px;
+    text-align: start;
+}
+
+@media (max-width: 1150px){
+    .contacto__form__2{
+        margin:50px;
+    }
+}
+
+@media (max-width: 1000px){
+    .texto__dividido{
+        display: none !important;
+    }
+    .grid{
+        grid-template-areas:
+    "header header"
+    "main main"
+    "footer footer";
+    }
+}
+
+/*----------CONTACTO----------*/
+
+/*----------SOBRE NOSOTROS----------*/
+
+.main__sobrenosotros{
+    background-image: url(../imagenes/fondo-sobrenosotros.jpg);
+    background-position: left bottom;
+    background-size: cover;
+    height: 82.3vh;
+    padding-bottom: 50px;
+}
+
+.sn__texto{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    max-width: 1200px; 
+    align-items: center;
+    justify-content: center;
+}
+
+.title__sn{
+    font-size: 50px;
+    text-shadow: 0px 5px 10px black ;
+}
+.sn__texto2 {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    font-size: 27px;
+    font-weight: 600;
+}
+.sn__texto2 p{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding-top: 7px;
+    text-shadow: 0px 5px 10px black ;
+}
+
+.bienvenido{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 50px;
+}
+
+/*----------SOBRE NOSOTROS----------*/
