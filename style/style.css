@@ -1,6 +1,6 @@
 html {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+    font-family: 'Montserrat', sans-serif !important;
+    
     scroll-behavior: smooth;
 }
 
@@ -12,36 +12,48 @@ html {
 body {
     background-color: #efefef;
     margin: 0;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 20px;
 }
 
 h1{
     font-size: 34px;
 }
 
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    margin: 0;
+}
+
+p{
+    margin: 0;
+}
+
 /*--------------------EMPIEZA EL HEADER--------------------*/
+
 
 header {
     background-color: white;
     margin: 0;
     padding: 10px;
     color: rgb(0, 0, 0);
+    align-items: center;
 }
 
-.nav {
+.navegacion {
     display: flex;
+    visibility: visible;
     justify-content: space-between;
-    align-items: center;
+    align-items: center !important;
     margin-left: 40px;
     margin-right: 20px;
 }
 
-
-
 .nav__inicio {
-    font-size: 30px;
+    font-size: 30px !important;
     text-transform: uppercase;
     font-style: italic;
     transition: 0.3s ease;
+    margin-bottom: 0;
 }
 .nav__inicio:hover{
     color: rgba(0, 0, 0, .666);
@@ -57,6 +69,7 @@ header {
     text-transform: uppercase;
     font-size: 17px;
     font-weight: 600;
+    margin-bottom: 0;
 }
 
 .nav__lista a {
@@ -75,12 +88,29 @@ header {
     border: 1px solid rgba(0, 0, 0, 0.152);
 }
 
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility:hidden;
+    height: 100px;
+}
+
 @media (max-width: 1150px){
-    .nav{
+    .navegacion{
         display: block;
         text-align: center;
     }
 }
+@media (max-width: 980px){
+    .navbar{
+        visibility: visible;
+    }
+    .navegacion{
+        visibility: hidden;
+    }
+}
+
 /*---------- TERMINA EL HEADER ----------*/
 
 
@@ -246,7 +276,7 @@ footer P {
         height:366px;
     }
 }
-@media (max-width: 1000px){
+@media (max-width: 1050px){
     .equipos{
         display:flex;
         flex-direction:row;
@@ -258,9 +288,10 @@ footer P {
 /*----------TERMINA EQUIPOS----------*/
 
 /*----------PRODUCTOS----------*/
-.main__productos{
-    padding-bottom: 50px;
+.btn{
+    width: 100%;
 }
+
 .nav__productos{
     display: flex;
     justify-content: space-evenly;
@@ -270,6 +301,15 @@ footer P {
     font-size: 30px;
     font-weight: 600;
 }
+@media (max-width: 1450px){
+    .nav__productos{
+        flex-direction: column ;
+    }
+    .nav__productos li{
+        margin:5px 0 !important;
+    }
+}
+
 .nav__productos li{
     margin: 30px 0px;
     border-radius: 10px;
@@ -285,7 +325,7 @@ footer P {
 .nav__productos a{
     text-decoration: none;
     color: black;
-    min-width: 300px;
+    min-width: 350px;
     display: flex;
     justify-content: center;
     padding: 4px;
@@ -296,7 +336,6 @@ footer P {
     font-size: 38px;
     text-transform: uppercase;
     font-style: oblique;
-    margin: 30px;
     justify-content: center;
 }
 
@@ -309,18 +348,15 @@ footer P {
 }
 
 .box__imagen{
-    width: 300px;
     border-radius: 10px 10px 0px 0px;
 }
+.row{
+    gap: 1.5rem 0;
+}
 .card{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    background-color: #ffffff;
     border-radius: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.152) ;
-    justify-content: space-between;
     transition: .3s ease;
+    max-width: 350px;
 }
 
 .card:hover{
@@ -332,15 +368,18 @@ footer P {
     justify-content: space-evenly;
     margin: 10px;  
 }
+.card-title{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 1000;
+    margin:0;
+}
 
 .card__title{
     margin-top: 10px;
     font-size: 17px;
-}
-
-.productos__view{
-    height: 80vh;
-    margin-top: 60px;
 }
 
 .buy{
@@ -356,11 +395,17 @@ footer P {
 
 .buy:hover{
     background-color:rgb(0, 105, 197);
+    color: #ffffff;
 }
 
 .precio{
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+ul{
+    padding:0;
+    margin:0;
 }
 
 /*----------PRODUCTOS----------*/
@@ -406,10 +451,10 @@ footer P {
     display: grid;
     grid-template-areas:
     "header header"
-    "aside main"
+    "section main"
     "footer footer";
     grid-template-columns: 50% 50%;
-    grid-template-rows: 63px auto 58px;
+    grid-template-rows: 58px auto 58px;
     height: 100vh;
 }
 header{
@@ -421,8 +466,8 @@ footer{
 main{
     grid-area:main;
 }
-aside{
-    grid-area:aside;
+section{
+    grid-area:section;
 }
 
 @media (max-width: 1150px){
@@ -430,6 +475,9 @@ aside{
     grid-template-rows: 100px auto 58px;
     }
 }
+
+
+
 /* grid */
 /*----------CONTACTO----------*/
 
@@ -437,6 +485,7 @@ aside{
     background-image: url(../imagenes/fondo-contacto.jpg);
     background-position: left bottom;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .fondo-rgba1{
     position: relative;
@@ -472,10 +521,27 @@ aside{
     padding: 30px;
     border-radius: 30px;
     background-color: #ffffff;
-    max-width: 300px;
+    max-width: 400px;
     width: 70%;
     box-shadow: 0 5px 10px -5px rgb(0 0 0 / 60%);  /* Sombra */
 }
+@media (max-width: 1150px){
+    .contacto__form{
+        
+        padding: 40px 0;
+    }
+}
+@media (max-width: 850px){
+    .contacto__form__2{
+        width: 100%;
+    }
+}
+@media (max-width: 1000px){
+    .contacto__form__2{
+        align-items: center;
+    }
+}
+
 
 .contacto__form__2 h2{
     font-size: 40px;
@@ -525,11 +591,7 @@ aside{
     text-align: start;
 }
 
-@media (max-width: 1150px){
-    .contacto__form__2{
-        margin:50px;
-    }
-}
+
 
 @media (max-width: 1000px){
     .texto__dividido{
@@ -551,7 +613,7 @@ aside{
     background-image: url(../imagenes/fondo-sobrenosotros.jpg);
     background-position: left bottom;
     background-size: cover;
-    height: 82.3vh;
+    height: 87vh;
     padding-bottom: 50px;
 }
 
